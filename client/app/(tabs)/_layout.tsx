@@ -2,10 +2,17 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { Tabs } from 'expo-router'
 import { Feather, Ionicons } from '@expo/vector-icons'
+import { COLORS } from '@/constants'
 
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs
+    screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: COLORS.primary,
+      }}
+      >
+      
        <Tabs.Screen name='index' options={{
          tabBarIcon: ({ color, focused })=>
            <Ionicons name={focused ? 'home' : 'home-outline'} size=  {26} color={color}/>
